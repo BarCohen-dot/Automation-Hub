@@ -20,11 +20,11 @@ and sends each email individually to ensure reliable delivery and avoid spam det
 1️⃣ Go to https://console.cloud.google.com/ and sign in with your Gmail account.
 2️⃣ Create a **new project** (e.g., "Python Mail Sender").
 3️⃣ Enable the **Gmail API** from the Google Cloud Console.
-4️⃣ Go to "APIs & Services" → "Credentials" → "Create Credentials" → "OAuth Client ID".
-5️⃣ Choose **Desktop App** and download the **credentials.json** file.
+4️⃣ Go to "API's & Services" → "Credentials" → "Create Credentials" → "OAuth Client ID".
+5️⃣ Choose **Desktop App** and download the **credentials.json** file. (Important)
 6️⃣ Save `credentials.json` in the same folder as this script.
 7️⃣ When running the script for the first time, a browser window will open to authenticate
-   and grant access. This will automatically generate a **token.pickle** file for future runs.
+   and grant access. This will automatically generate a **token.pickle** file for future runs. (The "token" must be kept)
 
 ------------------------------------------ Important Notes -----------------------------------------------
 
@@ -71,7 +71,7 @@ if not creds or not creds.valid:
         creds.refresh(Request())                        # refresh the token if it has expired
     else:
         # initial login using OAuth and credentials.json file
-        flow = InstalledAppFlow.from_client_secrets_file('credentials.json', SCOPES)
+        flow = InstalledAppFlow.from_client_secrets_file('credentials.json', SCOPES) # Make sure it is indeed found, and if not, pull it from Google.
         creds = flow.run_local_server(port=0)            # opens a browser window for user authentication
     # save the token for future use
     with open('token.pickle', 'wb') as token:
