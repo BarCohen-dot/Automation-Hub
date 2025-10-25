@@ -7,9 +7,10 @@ and creates an Excel file that lists the accounts you follow who do *not* follow
 ----------------------------------------------------------------------------------------
 📦 How to Obtain the Data:
 ----------------------------------------------------------------------------------------
+(Important to the next script)
 1. Log into your Instagram account.
 2. Go to **Settings → Privacy and Security → Download Your Information**.
-3. Request to download your data (choose JSON format if possible).
+3. Request to download your data (choose JSON format if possible). 
 4. Once you receive the ZIP file, extract it locally.
 5. Inside the extracted folder, navigate to **followers_and_following/**.
 6. Locate and use the files:
